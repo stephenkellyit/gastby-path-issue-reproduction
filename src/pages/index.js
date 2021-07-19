@@ -2,6 +2,18 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
+var memoize = require("memoizee");
+
+var fn = function(one, two, three) {
+	/* ... */
+  console.log(one, two, three);
+};
+
+memoized = memoize(fn);
+
+memoized("foo", 3, "bar");
+memoized("foo", 3, "bar"); // Cache hit
+
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 
